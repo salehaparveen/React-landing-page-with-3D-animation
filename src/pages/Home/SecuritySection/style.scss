@@ -1,0 +1,70 @@
+
+.security {
+    display: flex;
+    justify-content: space-between;
+    min-height: 518px;
+    // padding-left: 10vw;
+    // padding-right: 10vw;
+    background-color: #010C1F;
+    background-image: url(../../../assets/images/squares2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: left;
+    // background: radial-gradient(18.26% 48.77% at 71.17% 37.8%, #EAF7F4 50.54%, rgba(234, 247, 244, 0) 100%);
+    .img-wrapper {
+        text-align: right;
+        img {
+            width: 31vw;
+            height: 400px;
+        }
+    }
+    .description {
+        .section-title {
+            width: 5.5vw;
+            min-height: 42px;
+            margin-top: 52.6vw;
+            font-family: 'Assistant';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1.67vw;
+            line-height: 42px;
+            color: #EAF7F4;
+            opacity: 0.8;
+        }
+        .text-group-wrapper {
+            div:nth-child(1) {
+                // width: 42vw;
+                min-height: 47px;
+                margin-top: 2vw;
+                font-family: 'Aldrich';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 2.5vw;
+                line-height: 47px;
+                color: #EAF7F4;
+                span {
+                    font-family: 'Aldrich';
+                    font-style: normal;
+                    text-align: center;
+                    background: linear-gradient(180deg, #47C3BE 46.21%, #47C3A5 68.46%, #1F5957 86.9%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+            }
+            div:nth-child(2) {
+                // width: 29.3vw;
+                // height: 216px;
+                margin-top: 2vw;
+                font-family: 'Assistant';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 0.9vw;
+                line-height: 24px;
+                color: #EAF7F4;
+            }
+        }
+
+    }
+    
+}

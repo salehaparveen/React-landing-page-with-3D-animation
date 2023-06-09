@@ -1,0 +1,277 @@
+
+$breakpoints: ('small': 767px,
+'medium': 992px,
+'large': 1200px,
+'extra-large': 1600px,
+'super-extra-large': 2200px) !default;
+
+@mixin respond-to($breakpoint) {
+
+// If the key exists in the map
+@if map-has-key($breakpoints, $breakpoint) {
+
+  // Prints a media query based on the value
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// If the key doesn't exist in the map
+@else {
+  @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+}
+}
+
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding-left: 3.14vw;
+    // padding-right: 2vw;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 72px;
+    background: #010C1F;
+    a {
+        color: #EAF7F4;
+    }
+    a:hover {
+        color: cadetblue !important;
+    }
+    .logo-title {
+        width: 15%;
+        a {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.6vw;
+            line-height: 15px;
+            color: #EAF7F4;
+            img {
+                width: 30px !important;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .navbar-wrapper {
+        position: absolute;
+        left: 17%;
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        .navbar-item {
+            align-self: center;
+            height: 26px;
+            margin-right: 4vw;
+            text-transform: capitalize;
+            line-height: 26px;
+            text-align: center;
+            font-family: 'Assistant';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1vw;
+        }
+    }
+
+    .doc-btn {
+        width: 15%;
+        display: flex;
+        justify-content: flex-end;
+        .doc-btn-inner {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 15px 1.25vw;
+            gap: 10px;
+            background: #47C3BE;
+            border-radius: 20px;
+            z-index: 30;
+            a {
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+                font-family: 'Aldrich';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 27px;
+                line-height: 20px;
+                text-align: center;
+                color: #EAF7F4;
+            }
+        }
+        .doc-btn-inner:hover {
+            background: #1F5957 !important;
+            border: 1px solid white;
+            cursor: pointer;
+            a {
+                color: white !important;
+
+            }
+        }
+    }
+    
+    @include respond-to('super-extra-large') {
+        .logo-title {
+            width: 20%;
+            a {
+                font-size: 18px;
+                img {
+                    width: 60px;
+                }
+            }
+        }
+        .navbar-wrapper {
+            left: 23%;
+            width: 60%;
+            .navbar-item {
+                font-size: 20px;
+            }
+        }
+        .doc-btn {
+            // height: 10px;
+            width: 20%;
+            align-items: center;
+            .doc-btn-inner {
+                width: 70%;
+                padding: 10px 5%;
+                a {
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+
+    @include respond-to('extra-large') {
+        .logo-title {
+            width: 20%;
+            a {
+                font-size: 18px;
+                img {
+                    width: 60px;
+                }
+            }
+        }
+        .navbar-wrapper {
+            left: 23%;
+            width: 60%;
+            .navbar-item {
+                font-size: 20px;
+            }
+        }
+        .doc-btn {
+            // height: 10px;
+            width: 20%;
+            align-items: center;
+            .doc-btn-inner {
+                width: 70%;
+                padding: 10px 5%;
+                a {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    @include respond-to('large') {
+        .logo-title {
+            width: 20%;
+            a {
+                font-size: 1.6vw;
+                img {
+                    width: 60px;
+                }
+            }
+        }
+        .navbar-wrapper {
+            left: 23%;
+            width: 60%;
+            .navbar-item {
+                font-size: 1.7vw;
+            }
+        }
+        .doc-btn {
+            // height: 10px;
+            width: 20%;
+            align-items: center;
+            .doc-btn-inner {
+                width: 80%;
+                padding: 10px 5%;
+                a {
+                    font-size: 1.6vw;
+                }
+            }
+        }
+    }
+
+    @include respond-to('medium') {
+        .logo-title {
+            width: 20%;
+            a {
+                font-size: 1.8vw;
+                img {
+                    width: 60px;
+                }
+            }
+        }
+        .navbar-wrapper {
+            left: 23%;
+            width: 60%;
+            .navbar-item {
+                font-size: 2vw;
+            }
+        }
+        .doc-btn {
+            height: 10px;
+            width: 20%;
+            align-items: center;
+            .doc-btn-inner {
+                width: 90%;
+                padding-left: 5%;
+                padding-right: 5%;
+                a {
+                    font-size: 1.8vw;
+                }
+            }
+        }
+    }
+
+    @include respond-to('small') {
+        .logo-title {
+            width: 20%;
+            a {
+                font-size: 1.5vw;
+                img {
+                    width: 60px;
+                }
+            }
+        }
+        .navbar-wrapper {
+            left: 23%;
+            width: 60%;
+            .navbar-item {
+                font-size: 2vw;
+            }
+        }
+        .doc-btn {
+            height: 10px;
+            width: 20%;
+            align-items: center;
+            .doc-btn-inner {
+                width: 90%;
+                padding-left: 5%;
+                padding-right: 5%;
+                a {
+                    font-size: 1.8vw;
+                }
+            }
+        }
+    }
+}
+    
